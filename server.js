@@ -18,7 +18,7 @@ const db = knex({
   }
 });
 
-console.log(db);
+console.log('this is the database: ', db);
 
 // Set up Express.js app
 const app = express();
