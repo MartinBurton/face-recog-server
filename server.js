@@ -18,6 +18,8 @@ const db = knex({
   }
 });
 
+console.log(db);
+
 // Set up Express.js app
 const app = express();
 app.use(express.urlencoded({extended: false}));
