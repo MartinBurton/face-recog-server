@@ -12,11 +12,10 @@ const db = knex({
   client: 'pg',
   connection: {
     connectionString: process.env.DATABASE_URL,
+    sslmode=require,
     ssl: true
   }
 });
-
-console.log(db);
 
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
