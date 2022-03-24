@@ -1,5 +1,6 @@
 const handleRegister = (req, res, db, bcrypt) => {
   const {email, password, name } = req.body;
+  console.log(`Email: ${email}, Pwd: ${password}, Name: ${name}`);
 
   // Validate received data and exit if validaition fails
   if (!email || !name || !password) {
