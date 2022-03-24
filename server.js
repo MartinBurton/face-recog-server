@@ -10,15 +10,14 @@ const image = require('./controllers/image');
 // Set up PostgreSQL database connection using knex
 const db = knex({
   client: 'pg',
-  connection: {
+  connection:{
     connectionString: process.env.DATABASE_URL,
     ssl: {
       rejectUnauthorized: false
-    }
+    },
+    database : 'postgresql-octagonal-67018'
   }
 });
-
-console.log('this is the database: ', db);
 
 // Set up Express.js app
 const app = express();
