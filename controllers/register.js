@@ -1,6 +1,5 @@
 const handleRegister = (req, res, db, bcrypt) => {
   const {email, password, name } = req.body;
-  console.log(`Email: ${email}, Pwd: ${password}, Name: ${name}`);
 
   // Validate received data and exit if validaition fails
   if (!email || !name || !password) {
@@ -30,7 +29,10 @@ const handleRegister = (req, res, db, bcrypt) => {
     .then(trx.commit)
     .catch(trx.rollback)
   })
-  .catch(err => res.status(400).json('unable to register'));
+  .catch(err => {
+    console.log('Error: ', err)
+    res.status(400).json('unable to register')
+  });
 }
 
 module.exports = { 
